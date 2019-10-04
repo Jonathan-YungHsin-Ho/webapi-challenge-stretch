@@ -22,6 +22,10 @@ const GlobalStyle = createGlobalStyle`
     line-height: 1.5;
   }
 
+  p {
+    font-size: 1.5rem;
+  }
+
   a {
     color: inherit;
   }

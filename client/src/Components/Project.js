@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import { Button } from '../styled-components';
 
 export default function Project({ project }) {
   console.log(project);
@@ -10,7 +11,10 @@ export default function Project({ project }) {
 
   return (
     <ProjectWrapper>
-      <Link to={`/projects/${project.id}`}>{project.name}</Link>
+      <Link to={`/projects/${project.id}`}>
+        <h3>{project.name}</h3>
+      </Link>
+      <p>{project.description}</p>
       <ButtonsWrapper>
         <Button>Edit</Button>
         <Button onClick={() => handleDelete(project.id)}>Delete</Button>
@@ -34,13 +38,4 @@ const ProjectWrapper = styled.div`
 const ButtonsWrapper = styled.div`
   display: flex;
   justify-content: space-evenly;
-`;
-
-const Button = styled.div`
-  font-size: 1.2rem;
-  cursor: pointer;
-
-  &:hover {
-    text-decoration: underline;
-  }
 `;

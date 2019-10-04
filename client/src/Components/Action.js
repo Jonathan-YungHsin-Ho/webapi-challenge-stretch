@@ -30,7 +30,6 @@ const ActionWrapper = styled.div`
   }
 
   p {
-    font-size: 1.5rem;
     margin: 2rem 0;
   }
 `;

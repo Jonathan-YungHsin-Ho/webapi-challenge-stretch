@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 import styled from 'styled-components';
 
 import Action from './Action';
+import AddAction from './AddAction';
 
 export default function ProjectDetails({ projects }) {
   const [actions, setActions] = useState([]);
@@ -33,6 +34,7 @@ export default function ProjectDetails({ projects }) {
         {actions.map(action => (
           <Action key={action.id} action={action} />
         ))}
+        <AddAction />
       </ListWrapper>
     </div>
   );

@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import Project from './Project';
+import AddProject from './AddProject';
 
 export default function ProjectList({ projects }) {
   return (
@@ -14,6 +15,7 @@ export default function ProjectList({ projects }) {
               <Project project={project} />
             </div>
           ))}
+        <AddProject />
       </ListWrapper>
     </div>
   );
@@ -30,9 +32,7 @@ const ListWrapper = styled.div`
   margin: 1rem auto;
 
   p {
-    font-size: 1.5rem;
-    padding: 2rem 0;
+    padding: 0 0 2rem 0;
     width: 100%;
-    border: 1px solid black;
   }
 `;
