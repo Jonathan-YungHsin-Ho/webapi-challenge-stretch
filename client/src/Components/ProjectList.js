@@ -1,6 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+
+import Project from './Project';
 
 export default function ProjectList({ projects }) {
   return (
@@ -10,9 +11,7 @@ export default function ProjectList({ projects }) {
         {projects &&
           projects.map(project => (
             <div key={project.id}>
-              <Link to={`/projects/${project.id}`}>
-                <p>{project.name}</p>
-              </Link>
+              <Project project={project} />
             </div>
           ))}
       </ListWrapper>
@@ -32,6 +31,8 @@ const ListWrapper = styled.div`
 
   p {
     font-size: 1.5rem;
-    margin: 2rem;
+    padding: 2rem 0;
+    width: 100%;
+    border: 1px solid black;
   }
 `;

@@ -24,7 +24,7 @@ export default function ProjectDetails({ projects }) {
 
   useEffect(() => {
     setProject(projects.find(project => project.id === Number(id)));
-  }, [projects]);
+  }, [projects, id]);
 
   return (
     <div>

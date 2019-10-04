@@ -1,37 +1,33 @@
 import React from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
-export default function Action({ action }) {
-  console.log(action);
+export default function Project({ project }) {
+  console.log(project);
 
   const handleDelete = () => {};
 
   return (
-    <ActionWrapper>
-      <h3>Action: {action.description}</h3>
-      <p>{action.notes}</p>
+    <ProjectWrapper>
+      <Link to={`/projects/${project.id}`}>{project.name}</Link>
       <ButtonsWrapper>
         <Button>Edit</Button>
-        <Button onClick={() => handleDelete(action.id)}>Delete</Button>
+        <Button onClick={() => handleDelete(project.id)}>Delete</Button>
       </ButtonsWrapper>
-    </ActionWrapper>
+    </ProjectWrapper>
   );
 }
 
-const ActionWrapper = styled.div`
+const ProjectWrapper = styled.div`
   width: 100%
   border: 1px solid black;  
   padding: 1rem 0;
 
-  h3 {
-    font-size: 1.8rem;
-    margin: 1rem 0;
-  }
-
-  p {
+  a {
     font-size: 1.5rem;
-    margin: 2rem 0;
+    margin: 2rem auto;
+    display: inline-block;
   }
 `;
 
