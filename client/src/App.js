@@ -6,7 +6,9 @@ import {
   Switch,
 } from 'react-router-dom';
 import axios from 'axios';
-import './App.css';
+import styled from 'styled-components';
+
+import GlobalStyle from './styled-components/GlobalStyle';
 
 import ProjectList from './Components/ProjectList';
 import ProjectDetails from './Components/ProjectDetails';
@@ -27,9 +29,10 @@ function App() {
   return (
     <Router>
       <div className='App'>
-        <h1>
+        <GlobalStyle />
+        <Header>
           <NavLink to='/'>Projects</NavLink>
-        </h1>
+        </Header>
         <Switch>
           <Route exact path='/'>
             <ProjectList projects={projects} />
@@ -42,5 +45,10 @@ function App() {
     </Router>
   );
 }
+
+const Header = styled.h1`
+  margin: 2rem 0;
+  font-size: 2.5rem;
+`;
 
 export default App;
